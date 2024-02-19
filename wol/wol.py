@@ -12,7 +12,7 @@ def send_wol_layer3(mac_address, port):
     mac_clean = mac_address.replace(":", "").replace("-", "")
     mac_byte = bytes.fromhex(mac_clean)
 
-    # Create payload x0FF * 6 bytes + Mac address * 16
+    # Create payload 0xFF * 6 bytes + Mac address * 16
     payload = b"\xFF" * 6 + mac_byte * 16
 
     # Create the socket
